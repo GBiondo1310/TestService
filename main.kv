@@ -1,0 +1,29 @@
+MDScreen:
+    MDToolbar:
+        id:headerbar
+        title:"TestServiceApp"
+        elevation:20
+        pos_hint:{"top":1}
+
+    MDNavigationLayout:
+        ScreenManager:
+            MDScreen:
+                size_hint:1, None
+                height:root.height-headerbar.height
+                MDBoxLayout:
+                    spacing:20
+                    orientation:"vertical"
+                    MDLabel:
+                        text:"App di test"
+                        halign:"center"
+
+                    MDRaisedButton:
+                        text:"Testa server"
+                        on_release:app.test_server()
+                        pos_hint:{'center_x':0.5}
+                    
+                    MDLabel:
+                        id:response_label
+                        text:""
+                        halign:"center"
+                    
